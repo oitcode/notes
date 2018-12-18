@@ -1,0 +1,120 @@
+================================================================================
+Git
+================================================================================
+
+o
+Below notes are prepared mainly form Progit book, and some other sources.
+Hope this will be useful for someone sometime.
+
+git status
+git status -s
+
+git diff
+git diff --cached
+git diff --staged
+
+git rm <filename>
+git rm --cached <filename>
+
+git mv <oldname> <newname>
+
+git log useful options
+----------------------
+
+git log
+git log --patch
+git log -p
+
+git log -2
+git log --stat
+
+git log --pretty=oneline
+git log --pretty=short
+git log --pretty=full
+git log --pretty=fuller
+
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h - %an, %ar : %s" --graph
+git log --oneline
+
+git log --since=2.weeks
+git log --after='2011'
+git log --until='2018'
+git log --author='John Doe'
+git log --grep='.*foo.*'
+
+git log -S function_name
+
+git log -- <filename>
+git log --no-merges
+
+
+Undoing things
+--------------
+
+git commit -m 'initial commit'
+git add forgotten_file
+git commit --amend
+
+git reset HEAD <filename>
+
+^ Dangerous. Be cautios.
+Above command unstages the file.
+
+git checkout -- <filename>
+
+^^ VERY dangerous. Use with care.
+Above command discards changes in the file in working directory.
+
+Working with remotes
+--------------------
+
+git remote
+git remote -v
+
+git remote add <shortname> <url>
+git remote add pb https://github.com/paulboone/ticgit
+
+git fetch pb
+git pull
+git push <remote> <branch>
+git push origin master
+git remote show <remote>
+
+git remote rename pb paul
+git remote rm paul
+
+
+Tagging
+-------
+
+git tag
+git tag -l "v1.8.5*"
+
+
+Creating tags
+.............
+
+git tag -a v1.4 -m "my version 1.4"
+git show v1.4
+git tag v1.4-lw
+git tag -a v1.2 9fceb02
+
+git push origin <tagname>
+git push origin --tags
+
+git tag -d <tagname>
+git push <remote> :refs/tags/<tagname>
+
+git tag -d v1.4-lw
+git push origin :refs/tags/v1.4-lw
+
+
+Git aliases
+-----------
+
+git config alias.<alias> <command>
+git config alias.co checkout
+
+git config --global alias.visual '!gitk'
+
