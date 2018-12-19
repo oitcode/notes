@@ -136,3 +136,10 @@ git log --oneline --decorate --graph --all
 git checkout -b testing
 
 git branch -d testing
+
+git mergetool
+
+git branch
+git branch -v
+git branch --merged
+git branch --no-merged
