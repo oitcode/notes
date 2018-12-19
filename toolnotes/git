@@ -128,3 +128,6 @@ git log --oneline --decorate
 git checkout <branchname>
 git checkout testing
 
+git log --oneline --decorate --graph --all
+
+git checkout -b testing
