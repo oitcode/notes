@@ -2,7 +2,6 @@
 Git
 ================================================================================
 
-o
 Below notes are prepared mainly form Progit book, and some other sources.
 Hope this will be useful for someone sometime.
 
@@ -117,4 +116,15 @@ git config alias.<alias> <command>
 git config alias.co checkout
 
 git config --global alias.visual '!gitk'
+
+Git branching
+=============
+
+git branch <branchname>
+git branch testing
+
+git log --oneline --decorate
+
+git checkout <branchname>
+git checkout testing
 
