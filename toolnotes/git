@@ -143,3 +143,4 @@ git branch
 git branch -v
 git branch --merged
 git branch --no-merged
+git branch --no-merged master
