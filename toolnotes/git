@@ -5,6 +5,9 @@
 Below notes are prepared mainly form Progit book, and some other sources.
 Hope this will be useful for someone sometime.
 
+Git basics
+==========
+
 git status
 git status -s
 
