@@ -131,3 +131,5 @@ git checkout testing
 git log --oneline --decorate --graph --all
 
 git checkout -b testing
+
+git branch -d testing
