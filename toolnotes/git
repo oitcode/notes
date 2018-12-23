@@ -144,3 +144,85 @@ git branch -v
 git branch --merged
 git branch --no-merged
 git branch --no-merged master
+
+Remote branches
+--------------- 
+git ls-remote [remote]
+git remote show [remote]
+
+git clone <url>
+git clone -o foobar <url>
+
+git fetch <remote>
+git fetch origin
+
+git push <remote> <branch>
+git push origin serverfix
+
+git push origin serverfix:serverfix
+git push origin serverfix:awesomebranch
+
+git config --global credential.helper cache
+
+^^ To use cache for git credentials. Not specific only to remote branches.
+
+git merge origin/serverfix
+
+git checkout -b serverfix origin/serverfix
+
+git pull
+
+git checkout --track origin/serverfix
+
+git checkout serverfix
+
+^^ If the branch name you’re trying to checkout (a) doesn’t exist and
+(b) exactly matches a name on only one remote, Git will create a tracking
+branch for you.
+
+git checkout -b sf origin/serverfix
+
+git branch -u origin/serverfix
+git branch --set-upstream-to origin/serverfix
+
+git merge @{u} 
+git merge @{upstream} 
+
+git branch -vv
+git fetch --all; git branch -vv
+
+Pulling
+~~~~~~~
+
+git pull
+
+Generally it’s better to simply use the fetch and merge commands explicitly
+as the magic of git pull can often be confusing.
+
+Deleting remote branches
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+git push origin --delete serverfix
+git push <remote> --delete <branch>
+
+Rebasing
+--------
+
+git checkout experiment
+git rebase master
+
+git checkout master
+git merge experiment
+
+git rebase --onto master server client
+git checkout master
+git merge client
+
+git rebase <basebranch> <topicbranch>
+git rebase master server
+git checkout master
+git merge server
+
+git branch -d client
+git branch -d server
+
